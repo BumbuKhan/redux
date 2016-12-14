@@ -1,11 +1,10 @@
-import React, {PropTypes, Component} from 'react'
+import React, { PropTypes, Component } from 'react'
 
 export default class User extends Component {
     render() {
         const { name } = this.props
-
         return <div>
-            <p>Hi, {name}</p>
+        <p>Привет, {name}!</p>
         </div>
     }
 }
