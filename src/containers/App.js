@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import User from '../components/User'
+import Page from '../components/Page'
 
 class App extends Component {
     render() {
@@ -7,8 +9,8 @@ class App extends Component {
         const { year, photos } = this.props.page;
 
         return <div>
-            <p>Hi from App {name}</p>
-            <p>You have got {photos.length} photos for {year}</p>
+            <User name={user.name} />
+            <Page photos={page.photos} year={page.year} />
         </div>
     }
 }
