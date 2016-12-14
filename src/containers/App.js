@@ -1,7 +1,23 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-export default class App extends Component{
+class App extends Component {
     render() {
-        return <div>Hello from App</div>
+        const { name } = this.props.user;
+        const { year, photos } = this.props.page;
+
+        return <div>
+            <p>Hi from App {name}</p>
+            <p>You have got {photos.length} photos for {year}</p>
+        </div>
     }
 }
+
+function mapStatetoProps(state) {
+    return {
+        user: state.user,
+        page: state.page
+    }
+}
+
+export default connect(mapStatetoProps)(App)
